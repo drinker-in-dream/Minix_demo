@@ -1,0 +1,101 @@
+BOOT/BOOT.asm:BlockBuff		equ     0C00h  ; block buffer  0x30C00
+Binary file BUILD/KERNEL.bin matches
+Binary file BUILD/libc.a matches
+Binary file BUILD/Minix.bin matches
+Binary file COMMANDS/libc.a matches
+FS/buf.h:  /* Data portion of the buffer. */
+FS/buf.h:  /* Header portion of the buffer. */
+FS/buf.h:  char b_count;			/* number of users of this buffer */
+FS/buf.h:#define NIL_BUF (struct buf *) 0	/* indicates absence of a buffer */
+FS/buf.h:EXTERN struct buf *buf_hash[NR_BUF_HASH];	/* the buffer hash table */
+FS/cache.c://struct buf *bp;	/* buffer pointer */
+FS/cache.c: * only necessary to see if it is in the cache; if it is not, any free buffer
+FS/cache.c:	if (bufs_in_use == NR_BUFS) printk("All buffers in use", NR_BUFS);
+FS/cache.c:		bufs_in_use++;		/* one more buffer in use now */
+FS/cache.c:	if (bp == NIL_BUF || bp->b_count > 0) printk("No free buffer", NO_NUM);
+FS/cache.c://struct buf *bp;	/* pointer to the buffer to be released */
+FS/cache.c:	bufs_in_use--;		/* one fewer block buffers in use */
+FS/cache.c:     * taken when a free buffer is needed later.
+FS/const.h:#define NR_BUFS           20	/* # blocks in the buffer cache */
+FS/device.c://char *buff;			/* virtual address of the buffer */
+FS/fproc.h:  char *fp_buffer;		/* place to save buffer if rd/wr can't finish */
+FS/fsput.c:#define BUFSIZE          100	/* print buffer size */
+FS/fsput.c:PRIVATE int bufcount;		/* # characters in the buffer */
+FS/fsput.c:PRIVATE char printbuf [BUFSIZE];	/* output is buffered here */
+FS/fsput.c:/* Flush the print buffer. */
+FS/fs_main.c:/* Initialize the buffer pool.  On the IBM PC, the hardware DMA chip is
+FS/fs_main.c: * not able to cross 64K boundaries, so any buffer that happens to lie
+FS/fs_main.c:			buffer = rp->fp_buffer;
+FS/fs_main.c:	buf_pool();			/* initialize buffer pool */
+FS/param.h:#define buffer	      m.m1_p1
+FS/pipe.c:  fp->fp_buffer = buffer;
+FS/read.c://char *buff;			/* virtual address of the user buffer */
+FS/read.c:		bp = get_block(NO_DEV, NO_BLOCK, NORMAL);     /* get a buffer */
+FS/read.c:	 * the cache, acquire it, otherwise just acquire a free buffer.
+FS/read.c:  /* In all cases, bp now points to a valid buffer. */
+FS/read.c:/* Perform read(fd, buffer, nbytes) or write(fd, buffer, nbytes) call. */
+FS/read.c:						nbytes, who, buffer)) >= 0) {
+FS/read.c:		r=rw_chunk(rip, position, off, chunk, rw_flag, buffer, seg,usr);
+FS/read.c:		buffer += chunk;	/* user buffer address */
+FS/stadir.c:  stp = &statbuf;		/* set up pointer to the buffer */
+FS/stadir.c:  return(stat_inode(rfilp->filp_ino, rfilp, buffer));
+FS/super.c:	return(ERROR);		/* insufficient buffers left for bit maps */
+FS/time.c:/* Perform the times(buffer) system call. */
+FS/write.c:/* Perform the write(fd, buffer, nbytes) system call. */
+FS/write.c://struct buf *bp;	/* pointer to buffer to zero */
+H/com.h:#define ADDRESS        m2_p1	/* core buffer address */
+INCLUDE/stdio.h: * If you want to stop with this kind of buffering use:
+INIT/init.c:	sync();			/* force buffers out onto RAM disk */
+INIT/utility_init.c:#define BUF_SIZE          100	/* print buffer size */
+INIT/utility_init.c:int buf_count;		/* # characters in the buffer */
+INIT/utility_init.c:char print_buf[BUF_SIZE];	/* output is buffered here */
+INIT/utility_init.c:  /* Accumulate another character.  If '\n' or buffer full, print it. */
+INIT/utility_init.c:/* Flush the print buffer by calling TTY task. */	
+KERNEL/clock.c:PRIVATE message mc;		/* message buffer for both input and output */
+KERNEL/keyboard.h:#define	KB_IN_BYTES	32	/* size of keyboard input buffer */
+KERNEL/klibx86.asm:	mov edi,[ebp + 24]		; di = offset of destination buffer
+KERNEL/klibx86.asm:; void vid_copy(u16 * buffer, u32 videobase, int offset, int words);
+KERNEL/klibx86.asm:	mov	esi,[ebp + 8]  ;buffer
+KERNEL/memory.c:PRIVATE message mess;		/* message buffer */
+KERNEL/proc.c:	vir_bytes vb;			/* message buffer pointer as vir_bytes */
+KERNEL/proc.h:	message *p_messbuf;		/* pointer to message buffer */
+KERNEL/tty.c:#define TTY_RAM_WORDS    320	/* ram buffer size */
+KERNEL/tty.c:#define MAX_OVERRUN       16	/* size of overrun input buffer */
+KERNEL/tty.c:  u16 tty_ramqueue[TTY_RAM_WORDS];	/* buffer for video RAM */
+KERNEL/tty.c:int vid_copy(u16 * buffer, unsigned videobase, int offset, int words);
+KERNEL/tty.c:	message tty_mess;		/* buffer for all incoming messages */
+KERNEL/tty.c:	tty_driver_buf[1] = MAX_OVERRUN;	/* set up limit on keyboard buffering */
+KERNEL/tty.c:	phys++;		/* advance one character in user buffer */
+KERNEL/win.c:PRIVATE message w_mess;		/* message buffer for in and out */
+LIB/fstat.c:PUBLIC int fstat(int fd, char *buffer)
+LIB/fstat.c://char *buffer;
+LIB/fstat.c:  n = callm1(FS, FSTAT, fd, 0, 0, buffer, NIL_PTR, NIL_PTR);
+LIB/getgrent.c:PRIVATE char _buffer[1024];
+LIB/getgrent.c:	                if ((_bufcnt = read (_gfd, _buffer, 1024)) <= 0)
+LIB/getgrent.c:		                _pnt = _buffer;
+LIB/getpwent.c:PRIVATE char  _buffer[1024];
+LIB/getpwent.c:			if ((_bufcnt = read (_pw, _buffer, 1024)) <= 0)
+LIB/getpwent.c:				_pnt = _buffer;
+LIB/read.c:PUBLIC int read(int fd, char *buffer, int nbytes)
+LIB/read.c://char *buffer;
+LIB/read.c:  n = callm1(FS, READ, fd, nbytes, 0, buffer, NIL_PTR, NIL_PTR);
+LIB/setbuf.c:void setbuf(FILE *iop, char *buffer)
+LIB/setbuf.c:	iop->_buf = buffer;
+LIB/stat.c:PUBLIC int stat(char *name, char *buffer)
+LIB/stat.c:  n = callm1(FS, STAT, len(name), 0, 0, name, buffer, NIL_PTR);
+LIB/syslib.c://real_time ptr[4];			/* pointer to time buffer */
+LIB/write.c:PUBLIC int write(int fd, char *buffer, int nbytes)
+LIB/write.c://char *buffer;
+LIB/write.c:  return callm1(FS, WRITE, fd, nbytes, 0, buffer, NIL_PTR, NIL_PTR);
+LOADER/LOADER.ASM:BlockBuff		equ     0C00h  ; block buffer  0x30C00
+LOADER/LOADER.ASM:BlockBuff2		equ     01000h  ; block buffer  0x31000
+MM/const.h:#define ZEROBUF_SIZE	1024	/* buffer size for erasing memory */
+MM/exec.c: * is copied to a buffer inside MM, and then to the new core image.
+MM/exec.c:    char mbuf[MAX_ISTACK_BYTES];	/* buffer for stack and zeroes */
+MM/put_mm.c:#define BUF_SIZE          100	/* print buffer size */
+MM/put_mm.c:PRIVATE int buf_count;		/* # characters in the buffer */
+MM/put_mm.c:PRIVATE char print_buf[BUF_SIZE];	/* output is buffered here */
+MM/put_mm.c:/* Flush the print buffer by calling TTY task. */
+MM/put_mm.c:  /* Accumulate another character.  If '\n' or buffer full, print it. */
+MM/signal_mm.c:#define DUMP_SIZE	 256	/* buffer size for core dumps */
+MM/utility_mm.c://struct stat *s_buf;		/* buffer for doing and returning stat struct */

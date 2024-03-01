@@ -1,0 +1,2 @@
+stadir.o: FS/stadir.c H/const.h H/type.h H/error.h H/stat.h FS/const.h \
+  FS/type.h FS/file.h FS/fproc.h FS/glo.h FS/inode.h FS/param.h

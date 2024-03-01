@@ -1,0 +1,1 @@
+strncpy.o: LIB/strncpy.c

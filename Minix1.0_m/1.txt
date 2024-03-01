@@ -1,0 +1,34 @@
+rm -f ./BUILD/BOOT.bin ./BUILD/LOADER.bin
+rm -f ./BUILD/KERNEL.bin
+rm -f ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/protect.o ./BUILD/i8259.o ./BUILD/start.o ./BUILD/proc.o ./BUILD/clock.o ./BUILD/sendrec.o ./BUILD/system.o  ./BUILD/tty.o  ./BUILD/printk.o  ./BUILD/abs.o ./BUILD/atoi.o ./BUILD/ctype.o ./BUILD/atol.o ./BUILD/bcopy.o ./BUILD/itoa.o ./BUILD/strcat.o ./BUILD/strcmp.o ./BUILD/strcpy.o ./BUILD/strlen.o ./BUILD/strncat.o ./BUILD/strncmp.o ./BUILD/strncpy.o ./BUILD/memory.o  
+nasm -I ./BOOT/INCLUDE  -o BUILD/BOOT.bin BOOT/BOOT.asm
+nasm -I  ./LOADER/INCLUDE -o BUILD/LOADER.bin LOADER/LOADER.asm
+nasm -I ./KERNEL -f elf -o BUILD/KERNEL.o KERNEL/x86.asm
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/main.o KERNEL/main.c
+nasm -I ./KERNEL -f elf -o BUILD/klibx86.o KERNEL/klibx86.asm
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/table.o KERNEL/table.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/protect.o KERNEL/protect.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/i8259.o KERNEL/i8259.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/start.o KERNEL/start.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/proc.o KERNEL/proc.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/clock.o KERNEL/clock.c
+nasm -I ./KERNEL -f elf -o BUILD/sendrec.o LIB/sendrec.asm
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/system.o KERNEL/system.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/tty.o KERNEL/tty.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/printk.o LIB/printk.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/abs.o LIB/abs.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/atoi.o LIB/atoi.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/ctype.o LIB/ctype.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/atol.o LIB/atol.c 
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/bcopy.o LIB/bcopy.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/itoa.o LIB/itoa.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strcat.o LIB/strcat.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strcmp.o LIB/strcmp.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strcpy.o LIB/strcpy.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strlen.o LIB/strlen.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strncat.o LIB/strncat.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strncmp.o LIB/strncmp.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/strncpy.o LIB/strncpy.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/memory.o KERNEL/memory.c
+ld -s -Ttext 0x30400 -o ./BUILD/KERNEL.bin ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/protect.o ./BUILD/i8259.o ./BUILD/start.o ./BUILD/proc.o ./BUILD/clock.o ./BUILD/sendrec.o ./BUILD/system.o  ./BUILD/tty.o  ./BUILD/printk.o  ./BUILD/abs.o ./BUILD/atoi.o ./BUILD/ctype.o ./BUILD/atol.o ./BUILD/bcopy.o ./BUILD/itoa.o ./BUILD/strcat.o ./BUILD/strcmp.o ./BUILD/strcpy.o ./BUILD/strlen.o ./BUILD/strncat.o ./BUILD/strncmp.o ./BUILD/strncpy.o ./BUILD/memory.o  
+rm -f ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/protect.o ./BUILD/i8259.o ./BUILD/start.o ./BUILD/proc.o ./BUILD/clock.o ./BUILD/sendrec.o ./BUILD/system.o  ./BUILD/tty.o  ./BUILD/printk.o  ./BUILD/abs.o ./BUILD/atoi.o ./BUILD/ctype.o ./BUILD/atol.o ./BUILD/bcopy.o ./BUILD/itoa.o ./BUILD/strcat.o ./BUILD/strcmp.o ./BUILD/strcpy.o ./BUILD/strlen.o ./BUILD/strncat.o ./BUILD/strncmp.o ./BUILD/strncpy.o ./BUILD/memory.o  

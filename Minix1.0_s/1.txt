@@ -1,0 +1,1 @@
+wait.o: LIB/wait.c INCLUDE/lib.h H/const.h H/type.h H/error.h H/callnr.h

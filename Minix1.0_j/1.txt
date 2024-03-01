@@ -1,0 +1,3 @@
+tty.o: KERNEL/tty.c H/const.h H/type.h H/com.h H/signal.h H/error.h \
+  H/callnr.h KERNEL/keymap.h KERNEL/keyboard.h KERNEL/const.h \
+  KERNEL/type.h KERNEL/protect.h KERNEL/proc.h KERNEL/glo.h

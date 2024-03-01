@@ -1,0 +1,13 @@
+rm -f ./BUILD/BOOT.bin ./BUILD/LOADER.bin
+rm -f ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/proc.o ./BUILD/protect.o ./BUILD/i8259.o
+nasm -I ./BOOT/INCLUDE  -o BUILD/BOOT.bin BOOT/BOOT.asm
+nasm -I  ./LOADER/INCLUDE -o BUILD/LOADER.bin LOADER/LOADER.asm
+nasm -I ./KERNEL -f elf -o BUILD/KERNEL.o KERNEL/x86.asm
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/main.o KERNEL/main.c
+nasm -I ./KERNEL -f elf -o BUILD/klibx86.o KERNEL/klibx86.asm
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/table.o KERNEL/table.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/proc.o KERNEL/proc.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/protect.o KERNEL/protect.c
+gcc -I ./INCLUDE -c -fno-builtin -o BUILD/i8259.o KERNEL/i8259.c
+ld -s -Ttext 0x30400 -o ./BUILD/KERNEL.bin ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/proc.o ./BUILD/protect.o ./BUILD/i8259.o
+rm -f ./BUILD/KERNEL.o ./BUILD/main.o ./BUILD/klibx86.o ./BUILD/table.o ./BUILD/proc.o ./BUILD/protect.o ./BUILD/i8259.o

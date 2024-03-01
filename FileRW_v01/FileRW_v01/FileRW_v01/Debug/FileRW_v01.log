@@ -1,0 +1,46 @@
+﻿生成启动时间为 2015/8/1 15:53:34。
+     1>项目“E:\FileRW_v01\FileRW_v01\FileRW_v01\FileRW_v01.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\FileRW_v01.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\FileRW_v01.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\FileRW_v01.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\FileRW_v01.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FileRW_v01.cpp
+         FileRW_v01.cpp
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(84): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(109): warning C4244: “参数”: 从“u64”转换到“long”，可能丢失数据
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(111): warning C4244: “参数”: 从“u64”转换到“size_t”，可能丢失数据
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(116): warning C4244: “参数”: 从“u64”转换到“size_t”，可能丢失数据
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(132): warning C4244: “初始化”: 从“u64”转换到“int”，可能丢失数据
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(444): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(445): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>e:\filerw_v01\filerw_v01\filerw_v01\filerw_v01.cpp(450): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FileRW_v01.exe.embed.manifest.res" Debug\FileRW_v01_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FileRW_v01.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.lib" /MACHINE:X86 Debug\FileRW_v01.exe.embed.manifest.res
+         Debug\FileRW_v01.obj
+         Debug\stdafx.obj
+       Manifest:
+         正在删除文件“Debug\FileRW_v01.exe.embed.manifest”。
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\FileRW_v01.exe.embed.manifest" /manifest Debug\FileRW_v01.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FileRW_v01.exe.embed.manifest.res" Debug\FileRW_v01_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FileRW_v01.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.lib" /MACHINE:X86 Debug\FileRW_v01.exe.embed.manifest.res
+         Debug\FileRW_v01.obj
+         Debug\stdafx.obj
+         FileRW_v01.vcxproj -> E:\FileRW_v01\FileRW_v01\Debug\FileRW_v01.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\FileRW_v01.unsuccessfulbuild”。
+         正在对“Debug\FileRW_v01.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\FileRW_v01\FileRW_v01\FileRW_v01\FileRW_v01.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.84

@@ -1,0 +1,59 @@
+FS/const.h:#define MAX_ZONES (NR_DZONE_NUM+NR_INDIRECTS+(long)NR_INDIRECTS*NR_INDIRECTS)
+FS/fs_main.c:#define MAX_RAM          512	/* maxium RAM disk size in blocks */
+FS/glo.h:EXTERN char user_path[MAX_PATH];/* storage for user path name */
+FS/link.c:  if ( (rip->i_nlinks & BYTE) == MAX_LINKS) r = EMLINK;
+FS/path.c:  while ( rnp < &user_path[MAX_PATH]  &&  c != '/'   &&  c != '\0') {
+FS/path.c:  while (c == '/' && rnp < &user_path[MAX_PATH]) c = *++rnp;
+FS/path.c:  if (rnp >= &user_path[MAX_PATH]) {
+FS/read.c:  if (mode_word == I_BLOCK_SPECIAL && f_size == 0) f_size = MAX_P_LONG;
+FS/utility.c:	if (len > MAX_PATH) {
+H/const.h:#define MAX_P_LONG  2147483647	/* maximum positive long, i.e. 2**31 - 1 */
+H/const.h:#define MAX_PATH            128	/* max length of path names */
+H/const.h:#define MAX_ISTACK_BYTES   1024	/* maximum initial stack size for EXEC */
+H/type.h:#define MAX(a,b)	(a > b ? a : b)
+H/type.h:#define MAX_BLOCK_NR (block_nr) 0177777
+H/type.h:#define MAX_INODE_NR (inode_nr) 0177777
+H/type.h:#define MAX_LINKS 	0177
+H/type.h:#define MAX_FILE_POS 017777777777L
+KERNEL/clock.c:  next_alarm = MAX_P_LONG;
+KERNEL/clock.c:	    next_alarm = MAX_P_LONG;	/* start computing next alarm */
+KERNEL/tty.c:#define MAX_OVERRUN       16	/* size of overrun input buffer */
+KERNEL/tty.c:PRIVATE char tty_driver_buf[2*MAX_OVERRUN+2]; /* driver collects chars here */
+KERNEL/tty.c:PRIVATE char tty_copy_buf[2*MAX_OVERRUN];  /* copy buf used to avoid races */
+KERNEL/tty.c:	tty_driver_buf[1] = MAX_OVERRUN;	/* set up limit on keyboard buffering */
+KERNEL/win.c:#define MAX_ERRORS         4	/* how often to try rd/wt before quitting */
+KERNEL/win.c:#define MAX_WIN_RETRY  10000	/* max # times to try to output to WIN */
+KERNEL/win.c:  for (i = 0, r = 255; i<MAX_WIN_RETRY && (r&0x80) != 0; i++)
+KERNEL/win.c:  for (i = 0, r = 255; i<MAX_WIN_RETRY ; i++){
+KERNEL/win.c:  while (errors <= MAX_ERRORS) {
+KERNEL/win.c:	if (errors > MAX_ERRORS)
+LIB/doprintf.c:#define MAXDIGITS 12
+LIB/doprintf.c:	char b[MAXDIGITS];
+LIB/doprintf.c:	for (n = 0; n < MAXDIGITS; n++)
+LIB/doprintf.c:	char a[MAXDIGITS];
+LIB/exec.c: * is principally used by INIT, to avoid having to allocate MAX_ISTACK_BYTES.
+LIB/exec.c:  char stack[MAX_ISTACK_BYTES];
+LIB/exec.c:  if (hp + nargs + nenvps >= &stack[MAX_ISTACK_BYTES]) return(E2BIG);
+LIB/exec.c:		if (hp >= &stack[MAX_ISTACK_BYTES]) return(E2BIG);
+LIB/exec.c:		if (hp >= &stack[MAX_ISTACK_BYTES]) return(E2BIG);
+LIB/printk.c:#define MAXDIGITS         12
+LIB/printk.c:static int bintoascii(long num, int radix, char a[MAXDIGITS]);
+LIB/printk.c:  char a[MAXDIGITS], *p, *p1, c;
+LIB/printk.c:static int bintoascii(long num, int radix, char a[MAXDIGITS])
+LIB/printk.c://char a[MAXDIGITS];
+LIB/printk.c:  for (n = 0; n < MAXDIGITS; n++) a[n] = 0;
+MM/break.c:	if (pt > MAX_PAGES || pd + ps > MAX_PAGES) return(ENOMEM);
+MM/break.c:	if (pt + pd + ps > MAX_PAGES) return(ENOMEM);
+MM/const.h:#if ZEROBUF_SIZE > MAX_PATH
+MM/const.h:#define MM_STACK_BYTES	MAX_ISTACK_BYTES + ZEROBUF_SIZE + 384
+MM/const.h:#define MM_STACK_BYTES	MAX_ISTACK_BYTES + MAX_PATH + 384
+MM/const.h:#define MAX_PAGES       0x100000	 	/* 1M pages in the virtual addr space */
+MM/exec.c:PRIVATE void patch_ptr(char stack[MAX_ISTACK_BYTES], vir_bytes base)
+MM/exec.c://char stack[MAX_ISTACK_BYTES];	/* pointer to stack image within MM */
+Tools/build/build/build.cpp:#define MAX(a,b)	(a > b ? a : b)
+Tools/build/build/build.cpp:		initsize = MAX(initsize,elf32_phdr[i].p_vaddr + elf32_phdr[i].p_memsz);
+Tools/build/build/build.cpp:		kernelsize = MAX(kernelsize,elf32_phdr[i].p_vaddr + elf32_phdr[i].p_memsz);
+Binary file Tools/build/build/Debug/vc100.idb matches
+Binary file Tools/build/build.sdf matches
+Binary file Tools/build/Debug/build.pdb matches
+Binary file Tools/build/ipch/build-c55b725d/build-2d68535c.ipch matches

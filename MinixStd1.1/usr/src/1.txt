@@ -1,0 +1,70 @@
+commands/cp.c:int isfloppy;			/* set to 1 for cp x /dev/fd? */
+commands/date.c:		freopen(stdin, "/dev/tty0", "r");
+commands/dosread.c:#define DRIVE		"/dev/fdX"
+commands/getlf.c:  open("/dev/tty0", 0);
+commands/lpr.c:  if (open("/dev/lp", 1) < 0)  {
+commands/lpr.c:	std_err("lpr: can't open /dev/lp\n");
+commands/mined1.c:			if (open("/dev/tty", 0) < 0)
+commands/mined1.c:  	error("Cannot open /dev/tty as fd #0", NIL_PTR);
+commands/mined1.c:  if ((input_fd = open("/dev/tty", 0)) < 0)
+commands/mined1.c:	panic("Cannot open /dev/tty for read");
+commands/MINIX/makefile:	@chmem =2048 bin/$f >/dev/null
+commands/PCIX/makefile:	@chmem =2048 bin/$f >/dev/null
+commands/run:mkdir bin 2>/dev/null
+commands/sh3.c:				open("/dev/null", 0);
+fs/device.c: *   rw_dev2:	 procedure that actually calls task for /dev/tty
+fs/device.c:/* This routine is only called for one device, namely /dev/tty.  It's job
+fs/device.c: * major/minor pair for /dev/tty itself.
+fs/table.c:    no_call,   rw_dev,      no_call,    MEM,         /* 1 = /dev/mem  */
+fs/table.c:    no_call,   rw_dev,      no_call,    FLOPPY,      /* 2 = /dev/fd0  */
+fs/table.c:    no_call,   rw_dev,      no_call,    WINCHESTER,  /* 3 = /dev/hd0  */
+fs/table.c:    no_call,   rw_dev,      no_call,    TTY,         /* 4 = /dev/tty0 */
+fs/table.c:    no_call,   rw_dev2,     no_call,    TTY,         /* 5 = /dev/tty  */
+fs/table.c:    no_call,   rw_dev,      no_call,    PRINTER      /* 6 = /dev/lp   */
+h/com.h:#define MEM               -4	/* /dev/ram, /dev/(k)mem and /dev/null class */
+h/com.h:#	define RAM_DEV     0	/* minor device for /dev/ram */
+h/com.h:#	define MEM_DEV     1	/* minor device for /dev/mem */
+h/com.h:#	define KMEM_DEV    2	/* minor device for /dev/kmem */
+h/com.h:#	define NULL_DEV    3	/* minor device for /dev/null */
+kernel/const.h:#define MEM_BYTES    655360L	/* memory size for /dev/mem */
+kernel/main.c:  /* Put a ptr to proc table in a known place so it can be found in /dev/mem */
+kernel/memory.c: *     /dev/null	- null device (data sink)
+kernel/memory.c: *     /dev/mem		- absolute memory
+kernel/memory.c: *     /dev/kmem	- kernel virtual memory
+kernel/memory.c: *     /dev/ram		- RAM disk
+kernel/memory.c:/* Read or write /dev/null, /dev/mem, /dev/kmem, or /dev/ram. */
+kernel/memory.c:  /* Get minor device number and check for /dev/null. */
+kernel/memory.c:  /* Set up 'mem_phys' for /dev/mem, /dev/kmem, or /dev/ram. */
+lib/run:ar r lib.a `lorder *.o | tsort 2>/dev/null`
+Binary file test/test4 matches
+test/test4.c:				fd = open("/dev/fd0", 0);
+tools/fsck.c:		chkdev("/dev/disk", clist, ilist, zlist);
+Binary file tools/init matches
+tools/init.c:char name[] = {"/dev/tty?"};	/* terminal names */
+tools/init.c:	open("/dev/tty0", 1);	/* std output */
+tools/init.c:	open("/dev/tty0", 1);	/* std error */
+tools/init.c:	tty = open("/dev/tty0", 1);
+tools/MINIX/makefile:	@dd if=a.out of=bootblok bs=16w skip=1 count=16 2>/dev/null
+tools/MINIX/makefile:	/etc/umount /dev/fd0
+tools/MINIX/makefile:	build bootblok kernel mm fs init fsck /dev/fd0
+tools/MINIX/makefile:	/etc/umount /dev/fd0
+tools/MINIX/makefile:	mkfs -l /dev/fd0 proto.usr >log.usr
+tools/MINIX/makefile:	/etc/umount /dev/fd0
+tools/MINIX/makefile:	mkfs -l /dev/fd0 proto.user >log.user
+tools/MINIX/makefile:	/etc/umount /dev/fd0
+tools/MINIX/makefile:	mkfs -l /dev/fd0 proto.ram >log.ram
+tools/PCIX/makefile:	@dd if=a.out of=bootblok bs=16w skip=1 count=16 2>/dev/null
+tools/PCIX/makefile:	cp image /dev/fd0
+tools/PCIX/makefile:	cp usr /dev/fd0
+tools/PCIX/makefile:	cp user /dev/fd0
+tools/PCIX/makefile:	cp ram /dev/fd0
+tools/PCIX/makefile:	cp disk5 /dev/fd0
+tools/PCIX/makefile:	cp disk6 /dev/fd0
+tools/PCIX/makefile:	cp disk7 /dev/fd0
+tools/PCIX/makefile:	cp disk8 /dev/fd0
+tools/PCIX/makefile:	cp 256.ram /dev/fd0
+tools/PCIX/makefile:	cp 256.usr /dev/fd0
+tools/PCIX/makefile:	cp at.ram /dev/fd0
+tools/PCIX/makefile:	cp at.setup /dev/fd0
+tools/rc:/etc/mount /dev/fd0 /usr
+tools/rc:/usr/bin/date -q </dev/tty

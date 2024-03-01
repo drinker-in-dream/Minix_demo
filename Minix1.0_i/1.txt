@@ -1,0 +1,2 @@
+clock.o: KERNEL/clock.c H/const.h H/type.h H/com.h KERNEL/const.h \
+  KERNEL/type.h KERNEL/protect.h KERNEL/proc.h KERNEL/glo.h

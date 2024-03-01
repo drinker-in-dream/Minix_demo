@@ -1,0 +1,2 @@
+start.o: KERNEL/start.c H/const.h H/type.h KERNEL/const.h KERNEL/type.h \
+  KERNEL/glo.h KERNEL/proc.h
